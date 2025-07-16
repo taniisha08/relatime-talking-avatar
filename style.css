@@ -1,0 +1,131 @@
+.peerConnectionState-new {
+    color: cornflowerblue;
+  }
+  .peerConnectionState-connecting {
+    color: orange;
+  }
+  .peerConnectionState-connected {
+    color: green;
+  }
+  .peerConnectionState-disconnected,
+  .peerConnectionState-closed,
+  .peerConnectionState-failed {
+    color: red;
+  }
+  /* ... (all other CSS rules from your original file) ... */
+  body * {
+    font-family: 'Mulish', sans-serif;
+    text-align: center;
+  }
+  #content {
+    width: 820px;
+    position: relative;
+    margin: 0 auto;
+  }
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .button-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+  }
+  button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    margin: 0 5px;
+    background-color: #7459fe;
+    color: #fff;
+  }
+  button:hover {
+    background-color: #9480ff;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+  }
+  #status {
+    clear: both;
+    padding: 20px 0 0 0;
+    text-align: left;
+    display: inline-block;
+    zoom: 1;
+    line-height: 140%;
+    font-size: 15px;
+  }
+  #status div {
+    padding-bottom: 10px;
+  }
+  #video-wrapper {
+    background: url(bg.png);
+    height: 500px;
+    background-position: top;
+  }
+  #video-wrapper div {
+    position: relative;
+    height: 100%;
+    width: 400px;
+    margin: 0 auto;
+  }
+  video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: #fff;
+    object-fit: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("alex_v2_idle_image.png");
+  }
+
+  /* --- NEW CSS FOR LOADING OVERLAY --- */
+.loader-overlay {
+    position: fixed; /* Sit on top of the page content */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Black background with opacity */
+    z-index: 9999; /* Make sure it's on top */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Mulish', sans-serif;
+}
+
+.loader-content {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(40, 40, 40, 0.9);
+}
+
+.loader-content h3 {
+    margin-top: 0;
+}
+  
+  .iceConnectionState-new { color: cornflowerblue; }
+  .iceConnectionState-checking { color: orange; }
+  .iceConnectionState-connected, .iceConnectionState-completed { color: green; }
+  .iceConnectionState-disconnected, .iceConnectionState-closed, .iceConnectionState-failed { color: red; }
+  .iceGatheringState-new { color: cornflowerblue; }
+  .iceGatheringState-gathering { color: orange; }
+  .iceGatheringState-complete { color: black; }
+  .signalingState-stable { color: green; }
+  .signalingState-have-local-offer, .signalingState-have-remote-offer, .signalingState-have-local-pranswer, .signalingState-have-remote-pranswer { color: cornflowerblue; }
+  .signalingState-closed { color: red; }
+  .streamingState-streaming { color: green; }
+  .streamingState-empty { color: grey; }
+  .streamEvent-started { color: green; }
+  .streamEvent-done { color: orange; }
+  .streamEvent-ready { color: green; }
+  .streamEvent-error { color: red; }
+  .streamEvent-dont-care { color: gray; }

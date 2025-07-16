@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="didStreamApp">
+
+<head>
+    <title>D-ID Streaming POC (AngularJS)</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body ng-controller="MainController">
+
+    <div class="loader-overlay" ng-show="isLoading">
+        <div class="loader-content">
+            <h3>Connecting to Avatar...</h3>
+            <p>Please wait, this may take a moment.</p>
+        </div>
+    </div>
+
+    <div id="content">
+        <div id="video-wrapper">
+            <div>
+                <video id="idle-video-element" width="400" height="400" autoplay loop ng-src="{{ idleVideoUrl }}"
+                    ng-style="{'opacity': 1 - streamVideoOpacity}"></video>
+                <video id="stream-video-element" width="400" height="400" autoplay
+                    ng-style="{'opacity': streamVideoOpacity}"></video>
+            </div>
+        </div>
+        <br />
+
+        <div class="button-container">
+            <div class="button-row">
+                <button id="connect-button" type="button" ng-click="connect()">Connect</button>
+                <button id="destroy-button" type="button" ng-click="destroy()">Destroy</button>
+            </div>
+            <div class="button-row">
+                <!-- <button id="audio-button" type="button" ng-click="startStream('audio')">Audio</button> -->
+                <textarea ng-model="text" rows="3"
+                    style="width: 500px; font-size: 16px; border-radius: 5px; padding: 5px;"
+                    placeholder="Type something for the avatar to say...">
+            </textarea>
+
+                <button id="text-button" type="button" ng-click="startStream(text)">Speak</button>
+            </div>
+        </div>
+
+        <!-- <div id="status">
+            ICE gathering status: <label id="ice-gathering-status-label" ng-class="status.iceGathering.className">{{ status.iceGathering.text }}</label><br />
+            ICE status: <label id="ice-status-label" ng-class="status.ice.className">{{ status.ice.text }}</label><br />
+            Peer connection status: <label id="peer-status-label" ng-class="status.peer.className">{{ status.peer.text }}</label><br />
+            Signaling status: <label id="signaling-status-label" ng-class="status.signaling.className">{{ status.signaling.text }}</label><br />
+            Last stream event: <label id="stream-event-label" ng-class="status.streamEvent.className">{{ status.streamEvent.text }}</label><br />
+            Streaming status: <label id="streaming-status-label" ng-class="status.streaming.className">{{ status.streaming.text }}</label><br />
+          </div> -->
+
+        <div style="font-size: small;padding-top:20px;">
+            <h2>Examples</h2>
+
+            <p>Hello, I am an AI interview  assistant and I am here to take your interview. Can you tell me
+                something about yourself ?</p>
+            <p>Describe a time you encountered a particularly difficult or elusive bug in your work.
+                Can you walk me through the situation in detail? What steps did you take to identify the root cause
+                of
+                the problem?</p>
+            <p>Did you try any solutions that didn’t work before you found the right fix? How did you ensure that
+                the
+                issue was resolved completely and wouldn’t resurface?</p>
+
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
